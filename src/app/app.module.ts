@@ -1,10 +1,20 @@
-import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule }   from '@angular/forms';
-import { Pokemon }   from './app.component';
+import { NgModule } from '@angular/core';
+
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+import { PokemonComponent } from './pokemon/pokemon.component';
+
 @NgModule({
-    imports:      [ BrowserModule, FormsModule ],
-    declarations: [ Pokemon ],
-    bootstrap:    [ Pokemon ]
+  declarations: [
+    AppComponent,
+    PokemonComponent
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
 })
 export class AppModule { }

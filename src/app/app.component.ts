@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 
 @Component({
-    selector: 'my-app',
-    templateUrl: '../template/pokemon.html'
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.less']
 })
-export class Pokemon {
-    array_pokemon: number[] = [1,2,3,4,5,6,7,8];
+export class AppComponent {
+  title = 'pokemon-app';
 }
