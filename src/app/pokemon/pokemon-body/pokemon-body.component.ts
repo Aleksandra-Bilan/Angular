@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PokemonsArray } from './pokemon-array'
-import {pokemonViewState} from "../pokemon.service";
+import {pokemonViewStateService} from "../pokemon.service";
 
 @Component({
   selector: 'app-pokemon-body',
@@ -9,6 +9,7 @@ import {pokemonViewState} from "../pokemon.service";
 })
 export class PokemonBodyComponent implements OnInit {
   pokemonArray = PokemonsArray;
+  //elements: any;
 
   constructor() {
   }
