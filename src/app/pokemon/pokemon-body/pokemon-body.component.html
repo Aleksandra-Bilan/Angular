@@ -1,0 +1,24 @@
+<div class="main_container" pokemonView>
+    <div *ngFor="let pokemon of pokemonArray;">
+
+      <div *ngIf="pokemon['damage'] > 50; else elseBlock">
+        <div bigDamage class="card">
+          <img src="{{pokemon['image']}}" alt="{{pokemon['name']}}">
+          <h2>{{pokemon['name']}}</h2>
+          <p>Damage: {{pokemon['damage']}}</p>
+          <button (click)="catchPokemon(this.pokemon, $event)">Поймать</button>
+        </div>
+      </div>
+
+      <ng-template #elseBlock >
+        <div  class="card">
+          <img src="{{pokemon['image']}}" alt="{{pokemon['name']}}">
+          <h2>{{pokemon['name']}}</h2>
+          <p>Damage: {{pokemon['damage']}}</p>
+          <button (click)="catchPokemon(this.pokemon, $event)">Поймать</button>
+        </div>
+      </ng-template>
+
+    </div>
+</div>
+
