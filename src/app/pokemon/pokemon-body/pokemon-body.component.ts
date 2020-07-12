@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { PokemonsArray } from './pokemon-array'
 import {pokemonViewStateService} from "../pokemon.service";
 
 @Component({
@@ -8,21 +7,21 @@ import {pokemonViewStateService} from "../pokemon.service";
   styleUrls: ['./pokemon-body.component.less']
 })
 export class PokemonBodyComponent implements OnInit {
-  pokemonArray = PokemonsArray;
-  //elements: any;
+  pokemonArray = this.pokemonViewStateService.getAllPokemon();
 
-  constructor() {
+  constructor(private pokemonViewStateService: pokemonViewStateService) {
   }
 
-  catchPokemon(pokemon, event){
-    pokemon.catchState = !pokemon.catchState;
-    if(pokemon.catchState){
-      console.log(`Покемон ${pokemon.name} был пойман`);
-      event.target.innerHTML = 'Отпустить';
-    } else {
-      console.log(`Покемон ${pokemon.name} был отпущен`);
-      event.target.innerHTML = 'Поймать';
-    }
+  catchPokemon(pokemon, event): void {
+    this.pokemonViewStateService.catchPokemon(pokemon, event);
+  }
+
+  findPokemonByName(name){
+    this.pokemonArray = this.pokemonViewStateService.findPokemonByName(name);
+  }
+
+  findPokemonById(id){
+    this.pokemonArray = this.pokemonViewStateService.findPokemonByName(id);
   }
 
   ngOnInit(): void {
