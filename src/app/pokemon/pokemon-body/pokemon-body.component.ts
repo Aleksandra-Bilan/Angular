@@ -1,15 +1,33 @@
 import { Component, OnInit } from '@angular/core';
-import {pokemonViewStateService} from "../pokemon.service";
+import { pokemonViewStateService } from "../pokemon.service";
+import { ActivatedRoute  } from '@angular/router';
+
+interface DoCheck {
+  ngDoCheck(): void
+}
 
 @Component({
   selector: 'app-pokemon-body',
   templateUrl: './pokemon-body.component.html',
   styleUrls: ['./pokemon-body.component.less']
 })
-export class PokemonBodyComponent implements OnInit {
-  pokemonArray = this.pokemonViewStateService.getAllPokemon();
+export class PokemonBodyComponent implements DoCheck {
+  pokemonArray = this.pokemonViewStateService.pokemons;
 
-  constructor(private pokemonViewStateService: pokemonViewStateService) {
+  private pokemonId: number;
+
+  constructor(private pokemonViewStateService: pokemonViewStateService, private route: ActivatedRoute) {
+    this.route.queryParams.subscribe(params => {
+      this.pokemonId = params['id'];
+    });
+
+    if(this.pokemonId){
+      this.findPokemonById(this.pokemonId);
+    }
+  }
+
+  ngDoCheck(){
+    this.pokemonArray = this.pokemonViewStateService.pokemons;
   }
 
   catchPokemon(pokemon, event): void {
@@ -21,7 +39,7 @@ export class PokemonBodyComponent implements OnInit {
   }
 
   findPokemonById(id){
-    this.pokemonArray = this.pokemonViewStateService.findPokemonByName(id);
+    this.pokemonArray = this.pokemonViewStateService.findPokemonById(id);
   }
 
   ngOnInit(): void {

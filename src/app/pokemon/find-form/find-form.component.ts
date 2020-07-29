@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import { pokemonViewStateService } from "../pokemon.service";
 
 @Component({
   selector: 'app-find-form',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FindFormComponent implements OnInit {
 
-  constructor() { }
+  constructor(private pokemonViewStateService: pokemonViewStateService) { }
 
   ngOnInit(): void {
   }
 
+  findPokemon(value) {
+    this.pokemonViewStateService.findPokemonByName(value);
+  }
+
+  showAllPokemons(){
+    this.pokemonViewStateService.getAllPokemon();
+  }
 }

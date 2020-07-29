@@ -1,4 +1,7 @@
-<form action="">
-  <input type="text" placeholder="Which pokemon do you want to find?">
-  <button>Search</button>
+<form action="" >
+  <label>
+    <input type="text" placeholder="Which pokemon do you want to find?"  class="searching-customer" #searchInput>
+  </label>
+  <button (click)="findPokemon(searchInput.value)">Search</button>
+  <button (click)="showAllPokemons()">Show all</button>
 </form>

@@ -1,5 +1,6 @@
-import {Injectable} from "@angular/core";
+import {Injectable, Input, Output} from "@angular/core";
 import {PokemonListService} from "./pokemon-list.service";
+import { observable } from "rxjs";
 
 @Injectable({ providedIn: 'root' })
 export class pokemonViewStateService {
@@ -7,6 +8,8 @@ export class pokemonViewStateService {
   constructor(private pokemonList: PokemonListService) { }
 
   private pokemonsArray = this.getAllPokemon();
+
+  @Input() public pokemons = this.pokemonsArray;
 
   elements: any;
 
@@ -23,20 +26,21 @@ export class pokemonViewStateService {
     pokemon.catchState = !pokemon.catchState;
     if(pokemon.catchState){
       console.log(`Покемон ${pokemon.name} был пойман`);
-      event.target.innerHTML = 'Отпустить';
+      event.target.innerHTML = 'Let go';
     } else {
       console.log(`Покемон ${pokemon.name} был отпущен`);
-      event.target.innerHTML = 'Поймать';
+      event.target.innerHTML = 'Catch';
     }
   }
 
   findPokemonByName(name){
-    return this.pokemonsArray.filter(pokemon => pokemon.name === name);
+    this.pokemons = this.pokemonsArray.filter(pokemon => pokemon.name.toLocaleLowerCase() === name.toLocaleLowerCase());
   }
   findPokemonById(id){
-    return this.pokemonsArray.filter(pokemon => pokemon.id === id);
+    return this.pokemonsArray.filter(pokemon => pokemon.id === Number(id));
   }
   getAllPokemon(){
+    this.pokemons = this.pokemonList.getPokemonList();
     return this.pokemonList.getPokemonList();
   }
 

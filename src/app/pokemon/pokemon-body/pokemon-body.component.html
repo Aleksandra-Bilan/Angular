@@ -1,3 +1,5 @@
+<app-pokemon-view></app-pokemon-view>
+<app-find-form></app-find-form>
 <div class="main_container" pokemonView>
     <div *ngFor="let pokemon of pokemonArray;">
 
@@ -6,16 +8,20 @@
           <img src="{{pokemon['image']}}" alt="{{pokemon['name']}}">
           <h2>{{pokemon['name']}}</h2>
           <p>Damage: {{pokemon['damage']}}</p>
-          <button (click)="catchPokemon(this.pokemon, $event)">Поймать</button>
+          <button (click)="catchPokemon(this.pokemon, $event)">Catch</button>
+          <button>Edit</button>
+          <a [routerLink]="['/about']" [queryParams]="{id: pokemon['id']}">More information</a>
         </div>
       </div>
 
       <ng-template #elseBlock >
-        <div  class="card">
+        <div class="card">
           <img src="{{pokemon['image']}}" alt="{{pokemon['name']}}">
           <h2>{{pokemon['name']}}</h2>
           <p>Damage: {{pokemon['damage']}}</p>
-          <button (click)="catchPokemon(this.pokemon, $event)">Поймать</button>
+          <button (click)="catchPokemon(this.pokemon, $event)">Catch</button>
+          <button>Edit</button>
+          <a [routerLink]="['/about']" [queryParams]="{id: pokemon['id']}">More information</a>
         </div>
       </ng-template>
 

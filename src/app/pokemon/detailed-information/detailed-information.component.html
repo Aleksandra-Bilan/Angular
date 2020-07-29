@@ -1,0 +1,14 @@
+<div class="wrapper">
+  <div>
+    <img src="{{pokemon[0]['image']}}" alt="{{pokemon[0]['name']}}">
+  </div>
+  <div  class="moreDetails">
+    <h1>{{pokemon[0]['name']}}</h1>
+    <div>
+      <h3>Detailed info</h3>
+      <p>Damage: {{pokemon[0]['damage']}}</p>
+      <p>Creation date: {{pokemon[0]['creationDate']}}</p>
+    </div>
+    <button (click)="catchPokemon(pokemon[0], $event)">Catch</button>
+  </div>
+</div>

@@ -5,27 +5,38 @@ import {PokemonBodyComponent} from "./pokemon-body/pokemon-body.component";
 import {DamageDirective} from "./pokemon-body/damage.directive";
 import {ViewDirective} from "./pokemonView.directive";
 import { FindFormComponent } from './find-form/find-form.component';
+import { DetailedInformationComponent } from './detailed-information/detailed-information.component';
+import {AppRoutingModule} from "../app-routing.module";
+import { PokemonViewComponent } from './pokemon-view/pokemon-view.component';
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
     PokemonHeaderComponent,
+    DetailedInformationComponent,
     PokemonBodyComponent,
     DamageDirective,
     ViewDirective,
-    FindFormComponent
+    FindFormComponent,
+    PokemonViewComponent
+
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    AppRoutingModule,
+    FormsModule
   ],
   exports: [
     PokemonHeaderComponent,
     PokemonBodyComponent,
-    FindFormComponent
+    FindFormComponent,
+    DetailedInformationComponent
   ],
   bootstrap: [
     PokemonHeaderComponent,
     PokemonBodyComponent,
-    FindFormComponent
+    FindFormComponent,
+    DetailedInformationComponent
   ]
 })
 export class PokemonModule { }

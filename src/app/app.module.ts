@@ -1,19 +1,19 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PokemonModule } from "./pokemon/pokemon.module";
-
+import { AppRoutingModule } from "./app-routing.module";
+import { FilterPipe } from "./pokemon/Pipes/filter.pipe";
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
-    PokemonModule
+    PokemonModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
