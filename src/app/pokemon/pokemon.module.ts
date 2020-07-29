@@ -9,6 +9,7 @@ import { DetailedInformationComponent } from './detailed-information/detailed-in
 import {AppRoutingModule} from "../app-routing.module";
 import { PokemonViewComponent } from './pokemon-view/pokemon-view.component';
 import {FormsModule} from "@angular/forms";
+import { EditPokemonComponent } from './edit-pokemon/edit-pokemon.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import {FormsModule} from "@angular/forms";
     DamageDirective,
     ViewDirective,
     FindFormComponent,
-    PokemonViewComponent
+    PokemonViewComponent,
+    EditPokemonComponent
 
   ],
   imports: [

@@ -9,7 +9,7 @@
           <h2>{{pokemon['name']}}</h2>
           <p>Damage: {{pokemon['damage']}}</p>
           <button (click)="catchPokemon(this.pokemon, $event)">Catch</button>
-          <button>Edit</button>
+          <a [routerLink]="['/edit']" [queryParams]="{id: pokemon['id']}"><button>Edit</button></a>
           <a [routerLink]="['/about']" [queryParams]="{id: pokemon['id']}">More information</a>
         </div>
       </div>
@@ -20,7 +20,7 @@
           <h2>{{pokemon['name']}}</h2>
           <p>Damage: {{pokemon['damage']}}</p>
           <button (click)="catchPokemon(this.pokemon, $event)">Catch</button>
-          <button>Edit</button>
+          <a [routerLink]="['/edit']" [queryParams]="{id: pokemon['id']}"><button>Edit</button></a>
           <a [routerLink]="['/about']" [queryParams]="{id: pokemon['id']}">More information</a>
         </div>
       </ng-template>

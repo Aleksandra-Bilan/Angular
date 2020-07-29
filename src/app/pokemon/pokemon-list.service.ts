@@ -11,6 +11,22 @@ export class PokemonListService {
     return this.PokemonsArray;
   }
 
+  changePokemon(id, name?, damage?, date?) {
+     this.PokemonsArray.forEach(item => {
+      if(item['id'] === Number(id)) {
+        if(name){
+          item['name'] = name;
+        }
+        if(damage){
+          item['damage'] = damage;
+        }
+        if(date){
+          item['creationDate'] = date;
+        }
+      }
+    })
+    return this.PokemonsArray;
+  }
    PokemonsArray: any = [
     {
       "name": "bulbasaur",

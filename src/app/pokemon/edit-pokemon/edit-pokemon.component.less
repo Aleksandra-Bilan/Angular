@@ -1,0 +1,30 @@
+@gray-color: #3c3939;
+
+.wrapper{
+  width: 40%;
+  margin: auto;
+  form{
+    display: flex;
+    flex-direction: column;
+    label{
+      width: 100%;
+    }
+    input{
+      padding: 5px 15px;
+      margin-bottom: 15px;
+      width: calc(100% - 30px);
+    }
+    button{
+      border: 1px solid @gray-color;
+      background: unset;
+      color: @gray-color;
+      font-size: 20px;
+      cursor: pointer;
+      border-radius: 5px;
+      padding: 5px 15px;
+      outline: unset;
+      display: block;
+      margin: 5px auto;
+    }
+  }
+}

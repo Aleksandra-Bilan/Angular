@@ -1,6 +1,5 @@
 import {Injectable, Input, Output} from "@angular/core";
 import {PokemonListService} from "./pokemon-list.service";
-import { observable } from "rxjs";
 
 @Injectable({ providedIn: 'root' })
 export class pokemonViewStateService {
@@ -26,7 +25,7 @@ export class pokemonViewStateService {
     pokemon.catchState = !pokemon.catchState;
     if(pokemon.catchState){
       console.log(`Покемон ${pokemon.name} был пойман`);
-      event.target.innerHTML = 'Let go';
+      event.target.innerHTML = 'Let`s go';
     } else {
       console.log(`Покемон ${pokemon.name} был отпущен`);
       event.target.innerHTML = 'Catch';
@@ -44,5 +43,7 @@ export class pokemonViewStateService {
     return this.pokemonList.getPokemonList();
   }
 
-
+  changePokemonData(id, name?, damage?, date?) {
+    this.pokemons = this.pokemonList.changePokemon(id, name, damage, date);
+  }
 }

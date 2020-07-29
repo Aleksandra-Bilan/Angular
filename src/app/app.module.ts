@@ -3,12 +3,10 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { PokemonModule } from "./pokemon/pokemon.module";
 import { AppRoutingModule } from "./app-routing.module";
-import { FilterPipe } from "./pokemon/Pipes/filter.pipe";
 
 @NgModule({
   declarations: [
-    AppComponent,
-    FilterPipe
+    AppComponent
   ],
   imports: [
     BrowserModule,

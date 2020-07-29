@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { pokemonViewStateService } from "../pokemon.service";
 import { ActivatedRoute  } from '@angular/router';
 
