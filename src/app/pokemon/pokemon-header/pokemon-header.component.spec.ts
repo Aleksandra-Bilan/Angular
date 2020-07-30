@@ -5,12 +5,14 @@ import { PokemonHeaderComponent } from './pokemon-header.component';
 describe('PokemonHeaderComponent', () => {
   let component: PokemonHeaderComponent;
   let fixture: ComponentFixture<PokemonHeaderComponent>;
+  let h1:        HTMLElement;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ PokemonHeaderComponent ]
     })
     .compileComponents();
+    h1 = fixture.nativeElement.querySelector('h1');
   }));
 
   beforeEach(() => {
@@ -21,5 +23,9 @@ describe('PokemonHeaderComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should display original title', () => {
+    expect(h1.textContent).toContain(component.title);
   });
 });

@@ -13,6 +13,6 @@
       <input type="text" placeholder="Change creation date like dd-mm-yyyy"  #date>
     </label>
     <button (click)="changePokemonData(name.value, damage.value, date.value)">Save</button>
-    <button>Cancel</button>
+    <a [routerLink]="['/about']" [queryParams]="{id: pokemonId}"><button>Cancel</button></a>
   </form>
 </div>

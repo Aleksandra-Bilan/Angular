@@ -22,4 +22,8 @@ describe('PokemonBodyComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should be pokemons array with length 11', () => {
+    expect(component.pokemonArray.length).toEqual(11);
+  });
 });

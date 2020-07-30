@@ -12,6 +12,7 @@ interface DoCheck {
   styleUrls: ['./pokemon-body.component.less']
 })
 export class PokemonBodyComponent implements DoCheck {
+
   pokemonArray = this.pokemonViewStateService.pokemons;
 
   private pokemonId: number;

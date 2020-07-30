@@ -7,6 +7,7 @@ import {Component, OnInit } from '@angular/core';
 })
 export class PokemonHeaderComponent implements OnInit {
 
+  public title: string = "Welcome to the Pokemon web-site!";
   constructor() {
   }
 
