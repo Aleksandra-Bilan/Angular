@@ -1,0 +1,18 @@
+<div class="wrapper">
+  <form action="" >
+    <label>
+      <p>Change pokemon name</p>
+      <input type="text" placeholder="Change name"  #name>
+    </label>
+    <label>
+      <p>Change pokemon damage</p>
+      <input type="text" placeholder="Change damage" #damage>
+    </label>
+    <label>
+      <p>Change pokemon creation date</p>
+      <input type="text" placeholder="Change creation date like dd-mm-yyyy"  #date>
+    </label>
+    <button (click)="changePokemonData(name.value, damage.value, date.value)">Save</button>
+    <a [routerLink]="['/about']" [queryParams]="{id: pokemonId}"><button>Cancel</button></a>
+  </form>
+</div>

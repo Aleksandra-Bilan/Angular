@@ -1,0 +1,20 @@
+import { TestBed } from '@angular/core/testing';
+
+import { PokemonListService } from './pokemon-list.service';
+
+describe('PokemonListService', () => {
+  let service: PokemonListService;
+
+  beforeEach(() => {
+    TestBed.configureTestingModule({});
+    service = TestBed.inject(PokemonListService);
+  });
+
+  it('should be created', () => {
+    expect(service).toBeTruthy();
+  });
+//  My tests
+  it('#getAllPokemon should return real value', () => {
+    expect(service.getPokemonList).toBe('real value');
+  });
+});
